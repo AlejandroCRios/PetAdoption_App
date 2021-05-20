@@ -19,4 +19,7 @@ from core.views import home, contacto, faq
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',home),
+    path('contacto/', contacto),
+    path('faq/', faq)
 ]
