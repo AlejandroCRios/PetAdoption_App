@@ -4,7 +4,9 @@ from django.core.mail import EmailMessage
 
 #this feature receive data from HTML and sent it through email, it isn't set for security
 def contacto(request):
+    #importa forms que a su vez impotan models
     contact = Contact()
+    
     if request.method == 'POST':
         contact = Contact(data = request.POST)
         if contact.is_valid():
@@ -14,8 +16,8 @@ def contacto(request):
             message = request.POST.get("message")
             
             
-            email = EmailMessage("Message from App Django", "The user with name{} with the email {} and phone{} ,writes following: " .format(nombre,email,phone,message), 
-                                 "",["             "],reply_to=[email])
+            email = EmailMessage("Mensaje de AdoptApp", "The user with name{} with the email {} and phone{} ,writes following: " .format(nombre,email,phone,message), 
+                                 "",["newproyectosena2021@outlook.com"],reply_to=[email])
 
             try:
                 email.send()
