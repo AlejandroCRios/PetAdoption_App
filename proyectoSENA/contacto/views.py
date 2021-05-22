@@ -24,9 +24,9 @@ def contacto(request):
             try:
                 #Envia los datos al correo del proyecto
                 email.send()
-                return redirect("/contacto/?valid")
+                return redirect("home")
             except:
-                return redirect("/contacto/?invalid")
+                return redirect("contacto")
     else:
         contact = Contact()
         return render(request, 'contacto.html', {'form':contact})
