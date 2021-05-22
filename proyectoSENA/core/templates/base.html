@@ -1,12 +1,14 @@
 {% load static %}
 
+{% load custom_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación para adopciones</title>
+    <title>PetAdoption</title>
 
 
     <!-- Fonts -->
@@ -42,10 +44,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li {% if request.path == '/' %} active {% endif %}>
+            <a class="nav-link scrollto" href="{% url 'home' %}">Home</a></li>
+
+          <li {% if request.path == '/faq/' %} active {% endif %}>
+            <a class="nav-link scrollto" href="{% url 'faq' %}">Preguntas frecuentes</a></li>
+          <li><a class="nav-link scrollto" href="#">Contacto</a></li>
+          <li><a class="getstarted scrollto" href="{% anchor 'home' 'about' %}">Buscador</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -54,6 +59,8 @@
   </header><!-- End Header -->
 
   <main id="main">
+
+  
 
 {% block content %}
 <!--Contenido variable-->
