@@ -1,6 +1,8 @@
+
 from django.shortcuts import render, redirect
 from .forms import Contact #forms.py
 from django.core.mail import EmailMessage
+
 
 
 def contacto(request):
@@ -30,3 +32,4 @@ def contacto(request):
     else:
         contact = Contact()
         return render(request, 'contacto.html', {'form':contact})
+

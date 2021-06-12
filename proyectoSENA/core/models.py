@@ -37,6 +37,8 @@ class Mascota (models.Model):
     idMascota = models.BigAutoField(primary_key=True)
     nombreMascota = models.CharField("Nombre mascota", max_length=30)
     especieMascota = models.CharField(max_length=515, choices= ESPECIE)
+    edad = models.CharField(max_length=9)
+    raza = models.CharField(max_length=30)
     tamanoMascota = models.CharField("Tamaño Mascota", max_length=15, choices= TAMANO)
     genero = models.CharField(max_length=15, choices= GENERO)
     vacunacion = models.CharField(max_length=15, choices= VACUNACION)
