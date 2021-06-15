@@ -12,3 +12,6 @@ def home (request):
 
 def faq (request):
     return render(request,"faq.html")
+
+
+

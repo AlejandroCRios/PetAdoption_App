@@ -46,5 +46,3 @@ class Mascota (models.Model):
     imagen = models.ImageField(upload_to ="Mascotas")
     HogarPaso = models.ForeignKey(HogarPaso, on_delete=models.CASCADE)
 
-
-    
