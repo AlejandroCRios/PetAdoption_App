@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'core',
     'contacto',
+    'buscador',
     'crispy_forms',
     'django_filters',
 ]
