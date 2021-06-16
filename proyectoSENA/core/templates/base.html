@@ -43,30 +43,33 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center">
 
-      <!-- Uncomment below if you prefer to use an image logo -->
       <a href="index.html" class="logo me-auto"><img src="{% static '/img/logo.png' %}" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li {% if request.path == '/' %} active {% endif %}>
             <a class="nav-link scrollto" href="{% url 'home' %}">Home</a></li>
-
-          <li {% if request.path == '/faq/' %} active {% endif %}>
-            <a class="nav-link scrollto" href="{% url 'faq' %}">Preguntas frecuentes</a></li>
+          <li><a class="nav-link scrollto" href="{% anchor 'home' 'faq' %}">Preguntas frecuentes</a></li>
           <li><a class="nav-link scrollto" href="{% url 'contacto' %}">Contacto</a></li>
-          <li><a class="getstarted scrollto" href="{% anchor 'home' 'about' %}">Buscador</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'buscador' %}">Buscador</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+  </header>
+
+ <!-- End Header -->
 
   <main id="main">
 
   
 
 {% block content %}
+
+
+
+
 <!--Contenido variable-->
 
 
@@ -76,51 +79,6 @@
 
 {% endblock %} 
 
-  <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Preguntas Frecuentes</h2>
-          <p>¿Tienes algúna duda? !Deja de dar vueltas persiguiendo tu cola, aquí te la resolvemos!:</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li class = "paws" data-aos="fade-up" data-aos-delay="100" style = "list-style:none">
-              <i class="fa fa-paw" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-1" class="collapsed"> ¿Como utilizo el buscador? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Solo tienes que filtrar las mascotas según las cracteristicas mas importantes de tu nuevo mejor amigo. Así encontrarás el mas indicado para tí.
-                </p>
-              </div>
-            </li>
-
-            <li class ="paws" data-aos="fade-up" data-aos-delay="200" style = "list-style:none">
-              <i class="fa fa-paw" aria-hidden="true"></i><a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed"> ¿Que hacer cuando ya he elegido la mascota que quiero adoptar? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Haz click en la imagen de la mascota que elegiste y aparecerá una ventana con sus caracteristicas y los datos de contacto de su Hogar de Paso, puedes comunicarte con ellos y manifestar tu interes de adoptar.
-                </p>
-              </div>
-            </li>
-
-            <li class = "paws" data-aos="fade-up" data-aos-delay="300"style = "list-style:none">
-              <i class="fa fa-paw" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed"> ¿Que requsitos se necesita para adoptar una mascota en PetAdoption? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Debes demostrar que tienes las condiciones para cuidar de tu nuevo mejor amigo y solventar todo lo que necesite para estar en buenas condiciones, tambien debes estar dispuesto a recibir visitas por parte del Hogar de Paso para que verifique que estás cumpliendo con los cuidados necesarios para la mascota.
-                </p>
-              </div>
-            </li>
-
-            
-
-          </ul>
-        </div>
-
-      </div>
-    </section><!-- End Frequently Asked Questions Section -->
 
   <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
@@ -141,8 +99,6 @@
 
   </main><!-- End #main -->
 
- 
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-newsletter">
@@ -161,8 +117,7 @@
 
     <div class="footer-top">
       <div class="container">
-        <div class="row">
-
+        <div class="row d-flex justify-content-around ">
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>PetAdoption</h3>
             <p>

@@ -12,7 +12,7 @@
         <h1>Preparate para conocer a tu nuevo mejor amigo!</h1>
         <h2>La forma mas facíl de adoptar</h2>
         <div class="d-flex justify-content-center justify-content-lg-start">
-          <a  href="#about" class="btn-get-started scrollto">Empieza aquí</a>
+          <a  href="#faq" class="btn-get-started scrollto">Empieza aquí</a>
           <a href="https//youtu.be/Zjwz86QCSEc" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
         </div>
       </div>
@@ -25,110 +25,52 @@
 </section><!-- End Hero -->
 
 
-  <!-- ====== Mascotas Section ======= -->
-
-  
-
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Encuentra tu mascota ideal</h2>
-        </div>
-
-          <div class="col-md 9">
-            <div class="row ">
-              {% for mascota in mascotas %}
-                <div class="col-md-4">
-                  <div class="card my-3">
-          
-                    <img class="image-tumbail"
-                    src="{{mascota.imagen.url}}" alt="Card image cap">
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-      </div>
-    </section>
-
+ 
     
-    <!-- End About Us Section -->
-        
+  <!-- ======= Como Funciona Section ======= -->
+  <section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
 
-    <!-- ======= Contact Section ======= 
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contacto</h2>
-          <p>Nos encantaría recibir tu visita, eso sí, lleva premios :) </p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Ubicación:</h4>
-                <p>Belén Altavista Carrera 112 N° 12-01 </p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>laperla@adoptameya.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Telefono:</h4>
-                <p>+54 333 33 33</p>
-              </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3431695926524!2d-75.6370959616966!3d6.218396864050464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdb4d5bfa2a773e54!2sCentro%20De%20Adopci%C3%B3n%20De%20Animales%20La%20Perla!5e0!3m2!1ses!2sco!4v1621661969394!5m2!1ses!2sco" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="" method="POST" role="form" class="php-email-form">
-              {% csrf_token %}
-              <div class="row">
-                
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-            
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              
-              </div>
-              <div class="text-center"><button name="btnSubmit" type="submit">Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
+      <div class="section-title">
+        <h2>¿COMO FUNCIONA?</h2>
+        <p>¿Tienes algúna duda? !Deja de dar vueltas persiguiendo tu cola, aquí te la resolvemos!:</p>
       </div>
-    </section> End Contact Section -->
 
+      <div class="faq-list">
+        <div class="align-content-center">
+          <ul>
+            <li class = "paws" data-aos="fade-up" data-aos-delay="100" style = "list-style:none">
+              <i class="fa fa-paw" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-1" class="collapsed"> ¿Como utilizo el buscador? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Solo tienes que filtrar las mascotas según las cracteristicas mas importantes de tu nuevo mejor amigo. Así encontrarás el mas indicado para tí.
+                </p>
+              </div>
+            </li>
+
+            <li class ="paws" data-aos="fade-up" data-aos-delay="200" style = "list-style:none">
+              <i class="fa fa-paw" aria-hidden="true"></i><a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed"> ¿Que hacer cuando ya he elegido la mascota que quiero adoptar? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Haz click en la imagen de la mascota que elegiste y aparecerá una ventana con sus caracteristicas y los datos de contacto de su Hogar de Paso, puedes comunicarte con ellos y manifestar tu interes de adoptar.
+                </p>
+              </div>
+            </li>
+
+            <li class = "paws" data-aos="fade-up" data-aos-delay="300"style = "list-style:none">
+              <i class="fa fa-paw" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed"> ¿Que requsitos se necesita para adoptar una mascota en PetAdoption? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Debes demostrar que tienes las condiciones para cuidar de tu nuevo mejor amigo y solventar todo lo que necesite para estar en buenas condiciones, tambien debes estar dispuesto a recibir visitas por parte del Hogar de Paso para que verifique que estás cumpliendo con los cuidados necesarios para la mascota.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
   </main><!-- End #main -->
 
 {% endblock %}
