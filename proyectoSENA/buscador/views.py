@@ -16,3 +16,4 @@ def buscador (request):
     context = {"mascotas":mascota,'filter': myfilter}
     
     return render(request,'buscador.html', context)
+

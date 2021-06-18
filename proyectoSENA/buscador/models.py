@@ -5,8 +5,6 @@ from django.db.models.fields import CharField
 import django_filters
 
 
-
-
 class HogarPaso (models.Model):
     TIPOID = (('Cédula de ciudadanía','Cédula de ciudadanía'),
             ('NIT','NIT'),

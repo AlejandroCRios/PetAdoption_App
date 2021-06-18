@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'buscador',
     'crispy_forms',
     'django_filters',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
