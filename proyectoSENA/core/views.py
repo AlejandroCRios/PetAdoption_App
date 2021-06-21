@@ -5,12 +5,7 @@ from .filters import mascotaFilter
 
 def home (request):
     
-    mascota =  Mascota.objects.all()
-    myfilter = mascotaFilter(request.GET, queryset= mascota)
-    mascota = myfilter.qs
-    context = {"mascotas":mascota,'filter': myfilter}
-    
-    return render(request,"home.html", context)
+    return render(request,"home.html")
 
 
 

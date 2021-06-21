@@ -566,6 +566,11 @@ section {
 /*--------------------------------------------------------------
   # Buscador Mascotas
   --------------------------------------------------------------*/
+.buscar {
+  background-color: #47b2e4;
+  color: white;
+}
+
 .buscador {
   margin-top: 5%;
 }
@@ -910,6 +915,22 @@ section {
 }
 
 /*--------------------------------------------------------------
+  # Detalle Mascota
+  --------------------------------------------------------------*/
+.equal .li-icon {
+  width: 50px;
+}
+
+.equal .ul-detalle {
+  padding-left: 0px;
+}
+
+.volver {
+  background-color: #fea82f;
+  color: white;
+}
+
+/*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
 #footer {
@@ -1105,7 +1126,4 @@ section {
     padding-top: 4px;
   }
 }
-
-
-
 /*# sourceMappingURL=style2.css.map */
