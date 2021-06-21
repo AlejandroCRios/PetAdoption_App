@@ -181,16 +181,12 @@
   });
 
 })()
-<<<<<<< HEAD
-  
-=======
 
 function abrir_modal_edicion(url){
   $('#edicion').load(url,function(){
     $(this).modal('show');
   });
 }
->>>>>>> test
   
   
   
