@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- ====== Buscador Mascotas Section ======= -->
+<section id="buscador" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+            <div class="section-title">
+                <h2 class="titulo">{{mascota.nombreMascota}}</h2>
+            </div>
+        </div>
+    
+    
+
+    <!-- ====== Detalle Mascotas ======= -->
+    
+        <div class="row  media" id="detalle-mascota">
+            
+            <span class="col-md-6 equal  media-left">
+                <img class ="rounded" style = " max-width: 100%" src="{{mascota.imagen.url}}">
+            </span> 
+                
+          
+
+            <div class="col-md-6 equal  media-body">
+                
+                <ul class = "ul-detalle text-center">
+                    <h5>Descripción:</h5>
+                    <li style = "list-style:none" class="text-center"><p>{{mascota.descripcion}}</p></li>
+                    <li style = "list-style:none"><img src="{% static '/vendor/icons/icons8-location-100.png' %}" class="li-icon" alt=""> {{hogar.ciudad}}</li>
+                    <li style = "list-style:none"><img src="{% static '/vendor/icons/descargar.png' %}" class="li-icon" alt="">  {{mascota.especieMascota}}</li>
+                    <li style = "list-style:none"><img src="{% static '/vendor/icons/icons8-cat-100.png' %}" class="li-icon" alt="">  {{mascota.raza}}</li>
+                    <li style = "list-style:none"><img src="{% static '/vendor/icons/icons8-pet-96.png' %}" class="li-icon" alt="">  {{mascota.sexo}}</li>
+                    <li style = "list-style:none"><img src="{% static '/vendor/icons/icons8-insulin-pen.png' %}" class="li-icon" alt="">  {{mascota.vacunacion}}</li>
+                    <li style = "list-style:none"><img src="{% static '/vendor/icons/icons8-doctors-bag.png' %}" class="li-icon" alt="">  {{mascota.esterilizacion}}</li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-md-5">
+            <div class="col-md-6 text-center align-items-center">
+                <p>Para adoptar a {{mascota.nombreMascota}} solo llama a el número o escribe al correo que aparece a continuación:</p>
+                <div>
+                    <p>Telofono del Hogar de Paso:</p>
+                    <h4>{{hogar.celular}}</h4>
+                </div>
+
+                <div>
+                    <p>Correo del Hogar de Paso:</p>
+                    <h4>{{hogar.correoE}}</h4>
+                </div>
+                <a href="{{request.META.HTTP_REFERER}}" class="btn volver my-3">Volver atrás</a>  
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    
+         
+{% endblock %}
+
+

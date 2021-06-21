@@ -6,6 +6,7 @@ import django_filters
 
 
 class HogarPaso (models.Model):
+        
     TIPOID = (('Cédula de ciudadanía','Cédula de ciudadanía'),
             ('NIT','NIT'),
             ('Pasaporte','Pasaporte'),
@@ -28,8 +29,15 @@ class HogarPaso (models.Model):
     numeroidentifica = models.CharField("Numero de identificación", max_length=50)
     celular = models.CharField("Celular",max_length=30)
     direccion = models.CharField ("Dirección", max_length=100)
-    ciudad = models.CharField("Ciudad", max_length=30, choices= CIUDAD)
+    ciudad = models.CharField("Ubicación", max_length=30, choices= CIUDAD)
     correoE = models.CharField("Correo electrónico", max_length=50)
+    
+    class Meta:
+                verbose_name = 'Hogar de paso'
+                verbose_name_plural = 'Hogares de Paso'
+    
+    def __str__(self):
+        return self.nombreRazon
 
 
     
@@ -60,6 +68,13 @@ class Mascota (models.Model):
     vacunacion = models.CharField("Estado de Vacunación", max_length=15, choices= VACUNACION)
     esterilizacion = models.CharField("Estado de Esterilización", max_length=30, choices=ESTERILIZACION)
     imagen = models.ImageField(upload_to ="Mascotas")
+    descripcion = models.TextField("Descripción",max_length=1000)
     HogarPaso = models.ForeignKey(HogarPaso, on_delete=models.CASCADE)
     
+    class Meta:
+                verbose_name = 'Mascota'
+                verbose_name_plural = 'Mascotas'
+
+    def __str__(self):
+        return self.nombreMascota
 

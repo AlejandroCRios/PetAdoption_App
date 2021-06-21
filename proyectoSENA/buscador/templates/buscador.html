@@ -18,8 +18,7 @@
         
         
     
-        <!------------------------------------------------------->
-      
+      <!-- ====== Filtro Mascotas ======= -->
         
         <div class="row align-items-center mb-5">
           <form class= "align-items-center text-center" method="get">
@@ -57,7 +56,7 @@
                 </div>             
               </div>
               <div class="col-auto"> 
-                <button class="btn btn-primary btn-sm" type ="submit">Buscar</button>
+                <button class="btn btn-sm buscar" type ="submit">Buscar</button>
               </div>
             </div>
           </form>
@@ -67,43 +66,33 @@
 
         <div class="col-md 9">
           <div class="row ">
-            {% for mascota in mascotas %}
+
+           {% for mascota in mascotas %}
               <div class="col-md-4">
                 <div class="card my-3 rounded">
-        
+                 
                   <img class="image-tumbail rounded"
                   src="{{mascota.imagen.url}}" alt="Card image cap">
-                  <div class="text-center align-middle">
-                      <h5 class = "card-title mb-0"><i class="fa fa-paw" aria-hidden="true"></i> {{mascota.nombreMascota}} <i class="fa fa-paw" aria-hidden="true"></i></h5>
+                  
+                  <div class="text-center align-middle mt-md-2">
+                      <h5 class = "card-title mb-0"><i class="fa fa-paw" aria-hidden="true"></i> {{mascota.nombreMascota}}  <i class="fa fa-paw" aria-hidden="true"></i></h5>
                   </div>
+                    
+                  <a href = "{% url 'detalleMascota' mascota.idMascota mascota.HogarPaso.idHogarPaso %}" class="btn btn-outline-dark btn-sm m-1">Mas info / Adoptar</a>
+                
                 </div>
               </div>
-            {% endfor %}
+           {% endfor %} 
+
           </div>
         </div>
       </div>
+    <!--MODAL-->
+
+
+
     </section>
 
-    <!--MODAL-->
-      <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="image-gallery-title"></h4>
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img id="image-gallery-image" class="img-responsive col-md-12" src="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
-                    </button>
-
-                    <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+         
 {% endblock %}
