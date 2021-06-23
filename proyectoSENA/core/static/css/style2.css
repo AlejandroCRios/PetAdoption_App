@@ -635,6 +635,14 @@ section {
   height: 200px;
 }
 
+.buscador .form-inline .style-filter {
+  background-color: #18d26e;
+}
+
+.buscador .form-inline .style-filter label {
+  color: #fea82f;
+}
+
 /*--------------------------------------------------------------
   # Contact
   --------------------------------------------------------------*/
