@@ -1,14 +1,17 @@
 from django.db import models
 
 class Contact(models.Model):
-    name = models.CharField("Ingresa tu nombre", max_length=200)
-    email = models.EmailField("ingresa tu email",max_length=50)
-    phone = models.CharField("ingresa tu numero de celular",max_length=200)
-    message = models.TextField("Cuentame un poco sobre tí y porque te gustaría adoptarme!")
-   
+    
+    
+    nombre= models.CharField( max_length=200)
+    email = models.EmailField(max_length=50)
+    telefono = models.CharField(max_length=200)
+    mensaje = models.TextField()
+    ciudad = models.CharField( max_length=30)
+    
     class Meta: 
-        verbose_name = 'contact'
-        verbose_name_plural = 'contacts'
+        verbose_name = 'contacto'
+        verbose_name_plural = 'contactos'
 
     def __str__(self):
         return self.name

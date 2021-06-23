@@ -14,13 +14,14 @@ def contacto(request):
         if contact.is_valid():
             
             #reciben los datos que el usuario ingresa al formulario
-            nombre = request.POST.get("name")
+            nombre = request.POST.get("nombre")
             email = request.POST.get("email")
-            phone = request.POST.get("phone")
-            message = request.POST.get("message")
+            phone = request.POST.get("telefono")
+            city = request.POST.get("ciudad")
+            message = request.POST.get("mensaje")
             
-            
-            email = EmailMessage("Mensaje de AdoptApp", "El usuario con el nombre {} con el email {} y el telefono {}, escribre los siguiente: {} " .format(nombre,email,phone,message), 
+                                                                                             
+            email = EmailMessage("Mensaje enviado desde PetAdoption por {}".format(nombre), "========================================================= Nombre del remitente: {} ========================================================= Email del remitente: {} ========================================================= Teléfono: {} ========================================================= Ciudad: {}  ========================================================= Contenido del mensaje: {} " .format(nombre,email,phone,city,message), 
                                  "",["newproyectosena2021@outlook.com"],reply_to=[email])
 
             try:
