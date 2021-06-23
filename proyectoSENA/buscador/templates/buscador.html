@@ -8,91 +8,94 @@
 
 
 <!-- ====== Buscador Mascotas Section ======= -->
-    <section id="buscador" class="about">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="section-title">
-            <h2>Encuentra tu mascota ideal</h2>
-          </div>
-        </div>
-        
-        
-    
-      <!-- ====== Filtro Mascotas ======= -->
-        
-        <div class="row align-items-center mb-5">
-          <form class= "align-items-center text-center" method="get">
-            <div class="form-inline  ">
-              <div class="form-group">
-                <div class="col-auto">
-                    {{ filter.form.especieMascota.label_tag }}
-                </div>
-                <div class="col-auto">
-                  {% render_field filter.form.especieMascota class="form-control form-control-sm" %}
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-auto">
-                  {{ filter.form.tamanoMascota.label_tag }}
-                </div>
-                <div class="col-auto">
-                  {% render_field filter.form.tamanoMascota class="form-control form-control-sm" %}
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-auto">
-                  {{ filter.form.sexo.label_tag }}
-                </div>
-                <div class="col-auto">
-                  {% render_field filter.form.sexo class="form-control form-control-sm" %}
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-auto">
-                  {{ filter.form.HogarPaso__ciudad.label_tag }}
-                </div>
-                <div class="col-auto">
-                  {% render_field filter.form.HogarPaso__ciudad class="form-control form-control-sm" %}
-                </div>             
-              </div>
-              <div class="col-auto"> 
-                <button class="btn btn-sm buscar" type ="submit">Buscar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-        <!--RESULTADOS DE BUSQUEDA-->
-
-        <div class="col-md 9">
-          <div class="row ">
-
-           {% for mascota in mascotas %}
-              <div class="col-md-4">
-                <div class="card my-3 rounded">
-                 
-                  <img class="image-tumbail rounded"
-                  src="{{mascota.imagen.url}}" alt="Card image cap">
-                  
-                  <div class="text-center align-middle mt-md-2">
-                      <h5 class = "card-title mb-0"><i class="fa fa-paw" aria-hidden="true"></i> {{mascota.nombreMascota}}  <i class="fa fa-paw" aria-hidden="true"></i></h5>
-                  </div>
-                    
-                  <a href = "{% url 'detalleMascota' mascota.idMascota mascota.HogarPaso.idHogarPaso %}" class="btn btn-outline-dark btn-sm m-1">Mas info / Adoptar</a>
-                
-                </div>
-              </div>
-           {% endfor %} 
-
-          </div>
-        </div>
+<section id="buscador" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="section-title">
+        <h2>Encuentra tu mascota ideal</h2>
       </div>
-    <!--MODAL-->
+    </div>
+
+    <!-- ====== Filtro Mascotas ======= -->
+
+    <div class="row align-items-center mb-5">
+      <form class="align-items-center text-center" method="get">
+        <div class="form-inline style-filter">
+          <div class="form-group">
+            <div class="col-auto">
+              {{ filter.form.especieMascota.label_tag }}
+            </div>
+            <div class="col-auto">
+              {% render_field filter.form.especieMascota class="form-control form-control-sm" %}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-auto">
+              {{ filter.form.tamanoMascota.label_tag }}
+            </div>
+            <div class="col-auto">
+              {% render_field filter.form.tamanoMascota class="form-control form-control-sm" %}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-auto">
+              {{ filter.form.sexo.label_tag }}
+            </div>
+            <div class="col-auto">
+              {% render_field filter.form.sexo class="form-control form-control-sm" %}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-auto">
+              {{ filter.form.HogarPaso__ciudad.label_tag }}
+            </div>
+            <div class="col-auto">
+              {% render_field filter.form.HogarPaso__ciudad class="form-control form-control-sm" %}
+            </div>
+          </div>
+          <div class="col-auto">
+            <button class="btn rounded-pill mx-auto py-2 px-4 text-white" type="submit"
+              style="background: #47b2e4;">Buscar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--RESULTADOS DE BUSQUEDA-->
+
+    <div class="col-md 9">
+      <div class="row ">
+
+        {% for mascota in mascotas %}
+        <div class="col-md-4">
+          <div class="card pb-4 my-3 rounded">
+
+            <img class="image-tumbail rounded mb-2" src="{{mascota.imagen.url}}" alt="Card image cap">
+
+            <div class="text-center align-middle my-2">
+              <h5 class="card-title text-decoration-underline" style="color: #ff6701">
+                <i class="fa fa-paw mx-2" aria-hidden="true" style="color:#fea82f"></i>
+                {{mascota.nombreMascota}}
+                <i class="fa fa-paw mx-2" aria-hidden="true" style="color:#fea82f"></i>
+              </h5>
+            </div>
+
+            <a href="{% url 'detalleMascota' mascota.idMascota mascota.HogarPaso.idHogarPaso %}"
+              class="btn btn-outline-primary rounded-pill mx-auto py-2 px-4">Mas info | Adoptar</a>
+
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+  <!--MODAL-->
 
 
 
-    </section>
+</section>
 
-    
-         
+
+
 {% endblock %}
