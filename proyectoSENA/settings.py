@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ch*(p47@6101ca=@rvfr&#kd(xat!w
 
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['deploypetadoption.herokuapp.com']
 
 
 # Application definition
