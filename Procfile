@@ -1,1 +1,1 @@
-web: gunicorn proyectSENA.wsgi
+web: gunicorn proyectoSENA.wsgi
