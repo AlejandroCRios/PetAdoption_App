@@ -136,3 +136,5 @@ EMAIL_PORT= 587
 EMAIL_HOST_USER = "newproyectosena2021@outlook.com"
 EMAIL_HOST_PASSWORD = "Proyecto2021"
 DEFAULT_FROM_EMAIL = "newproyectosena2021@outlook.com"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
